@@ -10,7 +10,7 @@ import {
 
 const Start = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <View style={styles.header}>
         <Image
           source={{

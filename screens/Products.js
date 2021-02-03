@@ -25,7 +25,7 @@ const Products = () => {
   }, []);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <View style={styles.container}>
         {isLoading ? (
           <ActivityIndicator />

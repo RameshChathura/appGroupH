@@ -4,41 +4,25 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaViewView,
+  SafeAreaView,
   TouchableOpacity,
   TextInput,
 } from 'react-native';
 
 const Login = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to E-Shop</Text>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Name..."
-          placeholderTextColor="#003f5c"
-        />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container1}>
+        <Text>Hello</Text>
       </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Email..."
-          placeholderTextColor="#003f5c"
-        />
-      </View>
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>LOGIN</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Signup</Text>
-      </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
+export default Login;
 
 const styles = StyleSheet.create({
-  container: {
+  container: {flex: 1},
+  container1: {
     flex: 1,
     backgroundColor: '#009387',
     alignItems: 'center',
@@ -73,5 +57,3 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
-
-export default Login;
