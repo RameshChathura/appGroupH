@@ -16,19 +16,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from './screens/LoginScreen';
 import Products from './screens/Products';
 import Start from './screens/StartScreen';
+import SignIn from './screens/SignIn';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Start} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Products" component={Products} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <SignIn />;
 };
 
 export default App;
