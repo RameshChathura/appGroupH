@@ -7,6 +7,7 @@ import {
   Text,
   View,
   Image,
+  Button,
 } from 'react-native';
 
 const Products = () => {
@@ -17,7 +18,6 @@ const Products = () => {
     fetch('https://6wavrrn6r7.execute-api.us-west-2.amazonaws.com/products')
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         setData(json.Items);
       })
       .catch((error) => console.error(error))
@@ -26,7 +26,7 @@ const Products = () => {
 
   return (
     <SafeAreaView>
-      <View style={styles.container}>
+      <View>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
@@ -35,13 +35,25 @@ const Products = () => {
             keyExtractor={({id}, index) => id}
             renderItem={({item}) => (
               <View style={[styles.container]}>
-                <Text style={styles.title}>{item.name}</Text>
                 <Image
-                  style={{width: 300, height: 300}}
+                  style={{width: 200, height: 200}}
                   source={{
                     uri: item.imageUrl,
                   }}
                 />
+                <View style={styles.cardText}>
+                  <Text style={styles.title}>{item.name}</Text>
+                  <Text
+                    style={
+                      styles.price
+                    }>{`${item.currency}: ${item.price}`}</Text>
+                </View>
+                <View style={styles.button}>
+                  <Button
+                    title="Add to cart"
+                    onPress={() => Alert.alert('Simple Button pressed')}
+                  />
+                </View>
               </View>
             )}
           />
@@ -53,18 +65,28 @@ const Products = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'column',
     justifyContent: 'center',
-    borderWidth: 1,
+    alignItems: 'center',
+    borderWidth: 0.2,
     borderColor: '#20232a',
-    borderRadius: 6,
-    padding: 24,
-    margin: 5,
+    borderRadius: 2,
+    padding: 5,
+    marginVertical: 10,
+    marginHorizontal: 30,
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginTop: 16,
-    textAlign: 'center',
+  },
+  price: {fontSize: 20},
+  cardText: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 30,
+  },
+  button: {
+    alignSelf: 'flex-end',
+    margin: 5,
   },
 });
 

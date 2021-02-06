@@ -18,10 +18,8 @@ import Products from './screens/Products';
 import Start from './screens/StartScreen';
 import SignIn from './screens/SignIn';
 
-const Stack = createStackNavigator();
-
 const App = () => {
-  return <SignIn />;
+  return <Products />;
 };
 
 export default App;
