@@ -22,33 +22,34 @@ import Details from './screens/Details';
 import Pricing from './screens/Pricing';
 
 const MainStack = createStackNavigator();
-const SecondStack = createStackNavigator();
-const DeepStack = createStackNavigator();
+// const SecondStack = createStackNavigator();
+// const DeepStack = createStackNavigator();
 
-function ProductInfo() {
-  return (
-    <DeepStack.Navigator initialRouteName="ProductDetails">
-      <DeepStack.Screen name="ProductDetails" component={Details} />
-      <DeepStack.Screen name="Pricing" component={Pricing} />
-    </DeepStack.Navigator>
-  );
-}
-function Home() {
-  return (
-    <SecondStack.Navigator initialRouteName="Login">
-      <SecondStack.Screen name="Login" component={Login} />
-      <SecondStack.Screen name="SignUp" component={SignUp} />
-      <SecondStack.Screen name="Products" component={Products} />
-      <SecondStack.Screen name="ProductInfo" component={ProductInfo} />
-    </SecondStack.Navigator>
-  );
-}
+// function ProductInfo() {
+//   return (
+//     <DeepStack.Navigator initialRouteName="ProductDetails">
+//       <DeepStack.Screen name="ProductDetails" component={Details} />
+//       <DeepStack.Screen name="Pricing" component={Pricing} />
+//     </DeepStack.Navigator>
+//   );
+// }
+// function Home() {
+//   return (
+//     <SecondStack.Navigator initialRouteName="Login">
+//       <SecondStack.Screen name="Login" component={Login} />
+//       <SecondStack.Screen name="SignUp" component={SignUp} />
+//       <SecondStack.Screen name="Products" component={Products} />
+//       <SecondStack.Screen name="ProductInfo" component={ProductInfo} />
+//     </SecondStack.Navigator>
+//   );
+// }
 
 const App = () => {
   return (
     <NavigationContainer>
       <MainStack.Navigator>
-        <MainStack.Screen name="Home" component={Home} />
+        <MainStack.Screen name="Products" component={Products} />
+        <MainStack.Screen name="ProductDetails" component={Details} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

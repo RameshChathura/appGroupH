@@ -7,6 +7,7 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
   Alert,
   Button,
 } from 'react-native';
@@ -26,7 +27,7 @@ const Products = ({navigation}) => {
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1, backgroundColor: 'aliceblue'}}>
       <View>
         {isLoading ? (
           <ActivityIndicator />
@@ -35,27 +36,24 @@ const Products = ({navigation}) => {
             data={data}
             keyExtractor={({id}, index) => id}
             renderItem={({item}) => (
-              <View style={[styles.container]}>
-                <Image
-                  style={{width: 200, height: 200}}
-                  source={{
-                    uri: item.imageUrl,
-                  }}
-                />
-                <View style={styles.cardText}>
-                  <Text style={styles.title}>{item.name}</Text>
-                  <Text
-                    style={
-                      styles.price
-                    }>{`${item.currency}: ${item.price}`}</Text>
-                </View>
-                <View style={styles.button}>
-                  <Button
-                    title="Go to ProductInfo"
-                    onPress={() => navigation.navigate('ProductInfo')}
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ProductDetails', item)}>
+                <View style={[styles.card]}>
+                  <Image
+                    style={{width: 200, height: 200}}
+                    source={{
+                      uri: item.imageUrl,
+                    }}
                   />
+                  <View style={styles.cardText}>
+                    <Text style={styles.title}>{item.name}</Text>
+                    <Text
+                      style={
+                        styles.price
+                      }>{`${item.currency}: ${item.price}`}</Text>
+                  </View>
                 </View>
-              </View>
+              </TouchableOpacity>
             )}
           />
         )}
@@ -65,8 +63,8 @@ const Products = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'aliceblue',
+  card: {
+    backgroundColor: 'blanchedalmond',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
