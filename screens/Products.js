@@ -7,10 +7,11 @@ import {
   Text,
   View,
   Image,
+  Alert,
   Button,
 } from 'react-native';
 
-const Products = () => {
+const Products = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -50,8 +51,8 @@ const Products = () => {
                 </View>
                 <View style={styles.button}>
                   <Button
-                    title="Add to cart"
-                    onPress={() => Alert.alert('Simple Button pressed')}
+                    title="Go to ProductInfo"
+                    onPress={() => navigation.navigate('ProductInfo')}
                   />
                 </View>
               </View>
@@ -65,13 +66,14 @@ const Products = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'aliceblue',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 0.2,
+    borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#20232a',
-    borderRadius: 2,
-    padding: 5,
+    borderRadius: 5,
+    padding: 10,
     marginVertical: 10,
     marginHorizontal: 30,
   },
