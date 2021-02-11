@@ -20,6 +20,7 @@ import Start from './screens/StartScreen';
 import SignUp from './screens/SignUp';
 import Details from './screens/Details';
 import Pricing from './screens/Pricing';
+import Store from './Store/Store';
 
 const MainStack = createStackNavigator();
 // const SecondStack = createStackNavigator();

@@ -31,7 +31,7 @@ const Details = ({route, navigation}) => {
         />
         <View style={styles.btnCart}>
           <Button
-            onPress={() => Alert.alert('Added to Cart')}
+            onPress={() => dispatch({type: 'ADD_PRODUCT'})}
             title="Add to Cart"
             color="#841584"
           />
