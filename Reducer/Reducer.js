@@ -1,10 +1,7 @@
 const Reducer = (state, action) => {
+  console.log('work 5');
+  console.log(action.payload.name);
   switch (action.type) {
-    case 'SET_PRODUCTS':
-      return {
-        ...state,
-        products: action.payload,
-      };
     case 'ADD_PRODUCT':
       return {
         ...state,

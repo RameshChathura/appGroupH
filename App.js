@@ -10,50 +10,21 @@ import {
   View,
   Image,
 } from 'react-native';
+import Providers from './navigation/index';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Login from './screens/LoginScreen';
 import Products from './screens/Products';
-import Start from './screens/StartScreen';
-import SignUp from './screens/SignUp';
 import Details from './screens/Details';
-import Pricing from './screens/Pricing';
+import LoginScreen from './screens/LoginScreen';
+
 import Store from './Store/Store';
 
-const MainStack = createStackNavigator();
-// const SecondStack = createStackNavigator();
-// const DeepStack = createStackNavigator();
-
-// function ProductInfo() {
-//   return (
-//     <DeepStack.Navigator initialRouteName="ProductDetails">
-//       <DeepStack.Screen name="ProductDetails" component={Details} />
-//       <DeepStack.Screen name="Pricing" component={Pricing} />
-//     </DeepStack.Navigator>
-//   );
-// }
-// function Home() {
-//   return (
-//     <SecondStack.Navigator initialRouteName="Login">
-//       <SecondStack.Screen name="Login" component={Login} />
-//       <SecondStack.Screen name="SignUp" component={SignUp} />
-//       <SecondStack.Screen name="Products" component={Products} />
-//       <SecondStack.Screen name="ProductInfo" component={ProductInfo} />
-//     </SecondStack.Navigator>
-//   );
-// }
+const AppStack = createStackNavigator();
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <MainStack.Navigator>
-        <MainStack.Screen name="Products" component={Products} />
-        <MainStack.Screen name="ProductDetails" component={Details} />
-      </MainStack.Navigator>
-    </NavigationContainer>
-  );
+  return <Providers />;
 };
 
 export default App;

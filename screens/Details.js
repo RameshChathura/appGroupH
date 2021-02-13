@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 
 import {
   StyleSheet,
@@ -9,6 +9,8 @@ import {
   SafeAreaView,
   Alert,
 } from 'react-native';
+import Reducer from '../Reducer/Reducer';
+import {Context} from '../Store/Store';
 
 const Details = ({route, navigation}) => {
   const {
@@ -20,6 +22,13 @@ const Details = ({route, navigation}) => {
     description,
     id,
   } = route.params;
+  function addToCart() {}
+
+  const initialState = {
+    products: [],
+    error: null,
+  };
+  const [state, dispatch] = useReducer(Reducer, initialState);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'aliceblue'}}>
       <View style={styles.container}>
@@ -31,9 +40,13 @@ const Details = ({route, navigation}) => {
         />
         <View style={styles.btnCart}>
           <Button
-            onPress={() => dispatch({type: 'ADD_PRODUCT'})}
+            onPress={() =>
+              dispatch({
+                type: 'ADD_PRODUCT',
+                payload: {name: name, price: price},
+              })
+            }
             title="Add to Cart"
-            color="#841584"
           />
         </View>
         <View style={styles.cardText}>
