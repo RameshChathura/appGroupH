@@ -40,7 +40,7 @@ const SignupScreen = ({navigation}) => {
 
       <FormButton
         buttonTitle="Sign Up"
-        onPress={() => register(email, password)}
+        onPress={() => navigation.navigate('Products')}
       />
 
       <View style={styles.textPrivate}>
@@ -71,7 +71,7 @@ export default SignupScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f9fafd',
+    backgroundColor: 'aliceblue',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

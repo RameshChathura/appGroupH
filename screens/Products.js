@@ -37,7 +37,7 @@ const Products = ({navigation}) => {
             keyExtractor={({id}, index) => id}
             renderItem={({item}) => (
               <TouchableOpacity
-                onPress={() => navigation.navigate('ProductDetails', item)}>
+                onPress={() => navigation.navigate('ProductInfo', item)}>
                 <View style={[styles.card]}>
                   <Image
                     style={{width: 200, height: 200}}
