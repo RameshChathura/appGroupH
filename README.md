@@ -7,4 +7,4 @@
 1. clone the repo to your pc
 2. run 'npm install' on the directory
 3. run 'npx react-native start' and leave the console
-4.open new console and run 'npx react-native run-android'
+4. open new console and run 'npx react-native run-android'
