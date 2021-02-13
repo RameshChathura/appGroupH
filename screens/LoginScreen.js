@@ -40,12 +40,12 @@ const LoginScreen = ({navigation}) => {
 
       <FormButton
         buttonTitle="Sign In"
-        onPress={() => login(email, password)}
+        onPress={() => navigation.navigate('Products')}
       />
 
       <FormButton
         buttonTitle="Guest login"
-        onPress={() => alert('Guest user')}
+        onPress={() => navigation.navigate('Products')}
       />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
@@ -67,6 +67,7 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'aliceblue',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,

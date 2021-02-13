@@ -56,7 +56,7 @@ const Details = ({route, navigation}) => {
           <Text>{`Available: ${stock}`}</Text>
         </View>
 
-        <Button onPress={() => Alert.alert('Buy Now')} title="Buy Now" />
+        <Button onPress={() => alert('Buy Now')} title="Buy Now" />
       </View>
     </SafeAreaView>
   );
